@@ -13,7 +13,7 @@
     @foreach (var post in Model)
     {
         <a href='@Url.Action("Details", new { id = post.Id })'>
-            <img src="@Html.DisplayFor(modelProduct => post.ImagePath)" />
+            <img src="@Html.DisplayFor(modelProduct => post.ImagePath)"/>
         </a>
         <p>@Html.ActionLink("Delete", "Delete", new { id = post.Id })</p>
         <p>@Html.ActionLink("Edit", "Edit", new { id = post.Id })</p>
