@@ -40,7 +40,7 @@ namespace Flickr.Controllers
         {
             _db.PostsTags.Add(postsTags);
             _db.SaveChanges();
-            return RedirectToAction("Index", "Pictures");
+            return RedirectToAction("Index");
         }
     }
 }
