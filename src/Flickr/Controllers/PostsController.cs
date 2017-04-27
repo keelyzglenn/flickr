@@ -6,6 +6,7 @@ using Flickr.Models;
 using Microsoft.AspNetCore.Identity;
 using System.Linq;
 using System.Security.Claims;
+using Microsoft.EntityFrameworkCore;
 
 namespace Flickr.Controllers
 {
@@ -68,6 +69,19 @@ namespace Flickr.Controllers
         {
             var thisPost = _db.Posts.FirstOrDefault(posts => posts.Id == id);
             _db.Posts.Remove(thisPost);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public IActionResult Edit(int id)
+        {
+            var thisPost = _db.Posts.FirstOrDefault(items => items.Id == id);
+            return View(thisPost);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Post post)
+        {
+            _db.Entry(post).State = EntityState.Modified;
             _db.SaveChanges();
             return RedirectToAction("Index");
         }

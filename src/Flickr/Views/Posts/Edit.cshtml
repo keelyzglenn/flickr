@@ -1,0 +1,32 @@
+﻿
+
+@model Flickr.Models.Post
+
+<html>
+<head>
+    <title>Flickr - Edit</title>
+</head>
+<body>
+   
+        <h2>Edit</h2>
+        <hr />
+        <h4>Edit this post: @Html.DisplayFor(model => model.Description)</h4>
+
+        @using (Html.BeginForm())
+        {
+            @Html.HiddenFor(model => model.Id)
+
+            @Html.LabelFor(model => model.Description)
+            @Html.EditorFor(model => model.Description)
+
+            @Html.LabelFor(model => model.ImagePath)
+            @Html.EditorFor(model => model.ImagePath)
+
+
+            <input type="submit" value="Save" />
+        }
+        <p>@Html.ActionLink("Back to list", "Index")</p>
+ 
+
+</body>
+</html>
