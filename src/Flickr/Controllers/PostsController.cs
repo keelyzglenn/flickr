@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using System.Linq;
 using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Flickr.Controllers
 {
@@ -56,6 +57,10 @@ namespace Flickr.Controllers
         public IActionResult Details(int id)
         {
             var thisPost = _db.Posts.FirstOrDefault(post => post.Id == id);
+            ViewBag.Tag = _db.Posts
+                .Include(post => post.PostsTags)
+                .ThenInclude(poststags => poststags.Tag)
+                .Where(post => post.Id == id).ToList();
             return View(thisPost);
         }
 

@@ -12,4 +12,10 @@
 <p>
     @Html.DisplayFor(model => model.Description)
 </p>
+
+<p>Tags:</p>
+@foreach (var postsTags in Model.PostsTags)
+{
+    <p>@postsTags.Tag.Name</p>
+}
 <p>@Html.ActionLink("Back to list", "Index")</p>
