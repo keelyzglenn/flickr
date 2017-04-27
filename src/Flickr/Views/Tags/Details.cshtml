@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model Flickr.Models.Tag
+
+
+<h2>#@Html.DisplayFor(model => model.Name)</h2> 
+
+@foreach (var poststags in Model.PostsTags)
+{
+
+
+    <a href='@Url.Action("Details", "Posts", new { id = @poststags.Post.Id })'>
+        <img src="@poststags.Post.ImagePath" />
+    </a>
+}
+

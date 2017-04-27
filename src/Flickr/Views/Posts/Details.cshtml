@@ -6,16 +6,16 @@
 
 @model Flickr.Models.Post
 
-<h2>Details</h2>
-<hr />
 <img src=" @Html.DisplayFor(model => model.ImagePath) " alt="Alternate Text" />
 <p>
     @Html.DisplayFor(model => model.Description)
 </p>
 
-<p>Tags:</p>
+<p>
 @foreach (var postsTags in Model.PostsTags)
 {
-    <p>@postsTags.Tag.Name</p>
+    
+    <span>#@Html.ActionLink((string)@postsTags.Tag.Name, "Details", "Tags", new { id = @postsTags.Tag.TagId })</span>
+
 }
-<p>@Html.ActionLink("Back to list", "Index")</p>
+</p>

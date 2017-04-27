@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<Flickr.Models.Tag>
+
+
+<h1>All Tags</h1>
+
+@foreach (var tag in Model)
+{
+
+    <li>@Html.DisplayFor(modelTag => tag.Name) | @Html.ActionLink("Details", "Details", new { id = tag.TagId })</li>
+}

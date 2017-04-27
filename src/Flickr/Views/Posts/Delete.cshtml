@@ -1,10 +1,10 @@
 ﻿@model Flickr.Models.Post
 
-<html>
-<head>
-    <title>Delete</title>
-</head>
-<body>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
 
     <h2>Are you sure you want to delete this?</h2>
     <hr />
@@ -13,6 +13,3 @@
     {
         <input type="submit" value="Delete" />
     }
-    @Html.ActionLink("Back to List", "Index")
-</body>
-</html>

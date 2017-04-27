@@ -2,12 +2,10 @@
 
 @model Flickr.Models.Post
 
-<html>
-<head>
-    <title>Flickr - Edit</title>
-</head>
-<body>
-   
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
         <h2>Edit</h2>
         <hr />
         <h4>Edit this post: @Html.DisplayFor(model => model.Description)</h4>
@@ -27,6 +25,3 @@
         }
         <p>@Html.ActionLink("Back to list", "Index")</p>
  
-
-</body>
-</html>
