@@ -18,6 +18,7 @@ namespace Flickr.Models
         public virtual ApplicationUser User { get; set; }
 
         public ICollection<PostsTags> PostsTags { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
 
 
 

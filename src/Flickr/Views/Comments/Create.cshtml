@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@model Flickr.Models.Comment
+
+<h2>Comment on this post: </h2>
+<p>@ViewBag.thisPost.Description</p>
+
+
+@using (Html.BeginForm())
+{
+    <input type="hidden" name="PortfolioId" id="PortfolioId" value="@ViewBag.thisPost.Id" />
+
+    @Html.LabelFor(model => model.Description)
+    @Html.EditorFor(model => model.Description)
+    <input type="submit" value="Create" />
+}

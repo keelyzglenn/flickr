@@ -8,6 +8,8 @@ namespace Flickr.Models
         public DbSet<Post> Posts { get; set; }
         public DbSet<Tag> Tags { get; set; }
         public DbSet<PostsTags> PostsTags { get; set; }
+        public DbSet<Comment> Comment { get; set; }
+
         public ApplicationDbContext(DbContextOptions options) : base(options)
         {
 
