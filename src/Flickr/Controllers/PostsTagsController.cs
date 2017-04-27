@@ -30,8 +30,8 @@ namespace Flickr.Controllers
 
         public IActionResult Create()
         {
-            ViewBag.PostId = new SelectList(_db.Posts, "PostId", "Description");
-            ViewBag.TagId = new SelectList(_db.Tags, "TagId", "Name");
+            ViewBag.PostId = new SelectList(_db.Posts, "Id", "Description");
+            ViewBag.TagId = new SelectList(_db.Tags, "TagId","Name");
             return View();
         }
 
@@ -40,7 +40,7 @@ namespace Flickr.Controllers
         {
             _db.PostsTags.Add(postsTags);
             _db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Pictures");
         }
     }
 }

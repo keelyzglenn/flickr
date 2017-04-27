@@ -12,6 +12,11 @@ namespace Flickr.Models
         {
 
         }
+
+        public ApplicationDbContext()
+        {
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<PostsTags>()
