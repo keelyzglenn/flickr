@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<Flickr.Models.Post>
+
+
+<h1>All Posts</h1>
+
+@foreach (var post in Model)
+{
+
+    <a href='@Url.Action("Details", new { id = post.Id })'>
+        <img src="@Html.DisplayFor(modelProduct => post.ImagePath)" />
+    </a>
+}

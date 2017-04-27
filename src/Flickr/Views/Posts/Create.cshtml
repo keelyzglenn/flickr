@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Flickr.Models.Post
+
+<h2>Add a new post</h2>
+<hr />
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Description)
+    @Html.EditorFor(model => model.Description)
+
+    @Html.LabelFor(model => model.ImagePath)
+    @Html.EditorFor(model => model.ImagePath)
+    <input type="submit" value="Create" />
+}
+@Html.ActionLink("Back to List", "Index")

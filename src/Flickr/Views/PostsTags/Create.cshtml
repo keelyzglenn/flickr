@@ -1,0 +1,20 @@
+﻿@model Flickr.Models.PostsTags
+
+@{
+    ViewData["Title"] = "Question Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add a person to an experience</h2>
+<hr />
+
+@using (Html.BeginForm())
+{
+    <label>Person</label>
+    @Html.DropDownList("PostId1")
+
+    <label>Experience</label>
+    @Html.DropDownList("TagId")
+
+    <input type="submit" value="Create" />
+}

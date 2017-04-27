@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewData["Title"] = "Question Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model Flickr.Models.Post
+
+<h2>Details</h2>
+<hr />
+<img src=" @Html.DisplayFor(model => model.ImagePath) " alt="Alternate Text" />
+<p>
+    @Html.DisplayFor(model => model.Description)
+</p>
+<p>@Html.ActionLink("Back to list", "Index")</p>
